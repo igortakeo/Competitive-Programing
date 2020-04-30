@@ -20,9 +20,7 @@ void solve(vector<int>&v, int l, int r, int k){
 		int it = lower_bound(v.begin(), v.end(), x) - v.begin();
 		if(v[it] > x or it == (int)v.size())it--;
 		
-		int diff = v[it]-v[pos];
-
-		if(it == pos or (diff < l and diff > mid)){
+		if(it == pos){
 			flag = false;
 			break;
 		}
