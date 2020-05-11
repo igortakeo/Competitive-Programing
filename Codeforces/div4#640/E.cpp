@@ -17,7 +17,7 @@ int main(){
 		cin >> n;
 		
 		int v[n];
-		bool vis[8000];
+		bool vis[8005];
 		memset(vis, false, sizeof vis);
 		
 			
