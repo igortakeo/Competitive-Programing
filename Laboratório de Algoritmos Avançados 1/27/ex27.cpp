@@ -12,25 +12,21 @@ int dp[201][21];
 
 int read(){
 	vector<int>a;
-	int x;
-	char c;
-	string s = "";
-
-	while(scanf("%c", &c)){
-		if(c == '\n')break;
-		if(c == ' '){
-			x = stoi(s);
-			s.clear();
-			a.pb(x);
+	string s = "", p="";
+	
+	getline(cin, s);
+	for(int i=0; i<(int)s.size(); i++){
+		if(s[i] == ' '){
+			a.pb(stoi(p));
+			p.clear();
 		}
-		else s += c;
+		else p+=s[i];
 	}
-	x = stoi(s);
-	a.pb(x);
+	a.pb(stoi(p));
 	
 	v[0] = 0;
 	for(int i=0; i<(int)a.size(); i++) v[i+1] = a[i];
-	
+
 	return a.size();
 }
 
@@ -51,8 +47,7 @@ int main(){
 	
 	int t;
 	cin >> t;
-	cin.ignore();
-	
+	scanf("%*c");
 	while(t--){	
 		n = read();
 		string ans;
