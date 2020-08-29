@@ -48,8 +48,11 @@ int main(){
 		pq.pop();
 	}
 
+
+
 	cout << ans << endl;
 
 
 	return 0;
 } 
+

@@ -10,7 +10,6 @@ int n, v[MAX], cnt=1;
 int main(){
 
     cin >> n;
-
     for(int i=2; i<=n; i++){
         if(v[i] == 0) {
             v[i] = cnt;
