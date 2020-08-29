@@ -4,6 +4,7 @@
 #define fastcin  ios_base::sync_with_stdio(false); cin.tie(NULL);
 using namespace std;
 
+
 void solve(){	
     map<char, double>dic;
     
