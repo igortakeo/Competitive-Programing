@@ -11,17 +11,12 @@ int n, x, t, k;
 int money;
 int dp[11010][201][25];
 
-int solve(int id, int sum_price, int favour_value, int plates){
-    
-    if(id > 2*k or plates > 2*(n+1) or sum_price > money){
-        return 0;
-    }
-   
+int solve(int id, int sum_price, int plates){
+    if(id > 2*k or plates > 2*(n+1) or sum_price > money)return 0;
     if(dp[sum_price][id][plates] != -1) return dp[sum_price][id][plates]; 
     int r1=-1, r2=-1;  
-    r1 = solve(id+1, sum_price, favour_value, plates);
-    if(plates+1 <= 2*(n+1) and sum_price+dimsum[id].first <= money) r2 = solve(id+1, sum_price+dimsum[id].first, favour_value+dimsum[id].second, plates+1)+dimsum[id].second;   
-    
+    r1 = solve(id+1, sum_price, plates);
+    if(plates+1 <= 2*(n+1) and sum_price+dimsum[id].first <= money) r2 = solve(id+1, sum_price+dimsum[id].first, plates+1)+dimsum[id].second;   
     return dp[sum_price][id][plates] = max(r1, r2);
 }
 
@@ -49,7 +44,7 @@ int main(){
        
         money = floor(double(x * (n+1)) / 1.1 + 1e-6) - (n+1) * t;
 
-        double ans = solve(1,0,0,0);
+        double ans = solve(1,0,0);
         ans/=(n+1.0);
             
         printf("%.2lf\n", ans);
