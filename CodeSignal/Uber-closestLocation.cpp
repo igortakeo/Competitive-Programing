@@ -4,6 +4,8 @@
 
 using namespace std;
 
+//Problem Link: https://app.codesignal.com/company-challenges/uber/aPzqJJmy7xWi5zHmi
+
 struct Point{
     double x, y;
 
@@ -108,12 +110,6 @@ string closestLocation(string address, vector<vector<int>> objects, vector<strin
     
         bool flag = check(address, p);
         double dist = 0.0;
-        
-        for(string i : p){
-            cout << i << endl;
-        }
-        
-        cout << flag << ' ' << s << endl;
         
         if(!flag) continue;
         
